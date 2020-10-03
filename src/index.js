@@ -1,7 +1,8 @@
 exports.min = function min(array) {
 
-    if (array === 0) {
-        return 0;
+    if (!array || array.length == 0) {
+        array = 0;
+        return array;
     } else {
         var onlyNumberArr = array.filter((item) => typeof item === "number");
         // console.log(onlyNumberArr);
@@ -18,8 +19,9 @@ exports.min = function min(array) {
 
 exports.max = function max(array) {
 
-    if (array === 0) {
-        return 0;
+    if (!array || array.length == 0) {
+        array = 0;
+        return array;
     } else {
 
         var onlyNumberArr = array.filter((item) => typeof item === "number");
@@ -29,16 +31,17 @@ exports.max = function max(array) {
                 return Math.max(...onlyNumberArr);
             }
         }
-    }    
-    
+    }
+
 }
 
 exports.avg = function avg(array) {
-     var onlyNumberArr = array.reduce((el, currEl) => (el+currEl))
-            return onlyNumberArr/array.length
-  
+    if (!array || array.length == 0) {
+        array = 0;
+        return array;
+    } else {
+        var onlyNumberArr = array.reduce((el, currEl) => (el + currEl))
+        return onlyNumberArr / array.length;
+    }
+
 }
-
-
-
-
